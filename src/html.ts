@@ -8,9 +8,7 @@ export class HtmlResponse extends Response
 		if (!body.startsWith('<!DOCTYPE html>')) {
 			body = `<!DOCTYPE html>\n` + body
 		}
-		if (!headers['Content-Type']) {
-			headers['Content-Type'] = 'text/html'
-		}
+		headers['Content-Type'] ??= 'text/html'
 		super(body, statusCode, headers)
 	}
 
