@@ -8,10 +8,10 @@ export class JsonResponse extends Response
 		headers['Content-Type'] ??= 'application/json'
 		super('', statusCode, headers)
 		Object.defineProperty(this, 'body', {
-			get: () => JSON.stringify(this.data, (_, value) => (typeof value === 'bigint') ? value.toString() : value),
-			set: (body: string) => this.data = JSON.parse(body),
 			configurable: true,
-			enumerable: true
+			enumerable:   true,
+			get: () => JSON.stringify(this.data, (_, value) => (typeof value === 'bigint') ? value.toString() : value),
+			set: (body: string) => this.data = JSON.parse(body)
 		})
 	}
 
