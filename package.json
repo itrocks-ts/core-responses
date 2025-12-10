@@ -28,7 +28,13 @@
 	"homepage": "https://it.rocks",
 	"keywords": [
 		"backend",
-		"it.rocks"
+		"html",
+		"http",
+		"it.rocks",
+		"json",
+		"pdf",
+		"response",
+		"responses"
 	],
 	"license": "ISC",
 	"name": "@itrocks/core-responses",
@@ -42,5 +48,5 @@
 		"build:esm": "tsc -p tsconfig.esm.json && node esm/esm"
 	},
 	"types": "./esm/core-responses.d.ts",
-	"version": "0.0.10"
+	"version": "0.0.11"
 }
