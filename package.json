@@ -8,22 +8,17 @@
 	},
 	"description": "Prefabricated HTTP it.rocks responses for HTML, JSON, and PDF formats",
 	"devDependencies": {
-		"@types/node": "^24.10",
-		"typescript": "~5.9"
+		"typescript": "^6.0"
 	},
 	"engines": {
-		"node": ">=18"
+		"node": ">=24"
 	},
-	"exports": {
-		"import": "./esm/core-responses.js",
-		"require": "./cjs/core-responses.js"
-	},
+	"exports": "./cjs/core-responses.js",
 	"files": [
 		"LICENSE",
 		"README.md",
-		"*/*.d.ts",
-		"*/*.js",
-		"!*/esm.*"
+		"cjs",
+		"!*.map"
 	],
 	"homepage": "https://it.rocks",
 	"keywords": [
@@ -43,10 +38,7 @@
 		"url": "git+https://github.com/itrocks-ts/core-responses.git"
 	},
 	"scripts": {
-		"build": "npm run build:cjs && npm run build:esm",
-		"build:cjs": "tsc -p tsconfig.cjs.json",
-		"build:esm": "tsc -p tsconfig.esm.json && node esm/esm"
+		"build": "tsc"
 	},
-	"types": "./esm/core-responses.d.ts",
-	"version": "0.0.11"
+	"version": "0.1.0"
 }
